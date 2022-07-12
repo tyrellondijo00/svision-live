@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <!-- Bootstrap CSS -->
+
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <!-- Slick Slider CSS -->
+
+    <!-- jQuery first, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <!-- jQuery first, then Bootstrap JS -->
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <!-- stylesheet -->
+
+    <!-- Slick Slider JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <!-- Slick Slider JS -->
+
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap" rel="stylesheet" />
+    <!--Fonts-->
+
+    <!--Icons-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
+    <!--Icons-->
+
+    <title>SmartVision Test</title>
+</head>
+
+<body>
+
+    {% block content %}
+
+    {% endblock content %}
+
+    <!----Contacts ------------------------------------------------------------------------------------------------------------------------------------------------------>
+    <div class="contact" id="scrollspyHeading6">
+        <div class="content container-md">
+            <h1>Contact Us</h1>
+            <br>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum,
+                reiciendis. Quidem recusandae qui nobis consequuntur voluptatem,
+            </p>
+        </div>
+
+        <div class="container">
+            <div class="contactInfo">
+                <div class="box">
+                    <div class="icon">
+                        <i class="bi bi-geo-alt"></i>
+                    </div>
+                    <div class="text">
+                        <h4>Address</h4>
+                        <p>Horn of Africa - Somalia</p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="icon">
+                        <i class="bi bi-telephone-inbound"></i>
+                    </div>
+                    <div class="text">
+                        <h4>Phone</h4>
+                        <p>+252 90 7797395</p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="icon">
+                        <i class="bi bi-envelope"></i>
+                    </div>
+                    <div class="text">
+                        <h4>Email</h4>
+                        <p>info@smartvisionconsultancy.org</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contactForm">
+                <form action="{% url 'contact' %}" method="post">
+                    {% csrf_token %}
+                    <h2>Send Message</h2>
+                    <div class="inputBox">
+                        <input type="text" name="contact-name" required="required" />
+                        <span>Full Name</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="contact-email" required="required" />
+                        <span>Email</span>
+                    </div>
+                    <div class="inputBox">
+                        <textarea name="contact-message" required="required" id="" cols="30" rows="10"></textarea>
+                        <span>Type Your Message Here ...</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" name="" value="Send" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!----End of Contacts ------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script src="https://kit.fontawesome.com/029744d69a.js" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(".logo-carousel").slick({
+                slidesToShow: 6,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 1000,
+                arrows: true,
+                dots: false,
+                pauseOnHover: false,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 4,
+                        },
+                    },
+                    {
+                        breakpoint: 520,
+                        settings: {
+                            slidesToShow: 2,
+                        },
+                    },
+                ],
+            });
+        });
+    </script>
+
+</body>
+
+</html>

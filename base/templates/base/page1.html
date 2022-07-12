@@ -1,0 +1,155 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<div class="navigation">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a href="{% url 'index' %}">
+        <img src="{% static 'images/logo2.png' %}" alt="" width="300" height="55" class="d-inline-block" />
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav ml-auto mx-3">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{% url 'index' %}">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">ABOUT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'services' %}">SERVICES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">PROJECTS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'team' %}">TEAM</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'gallery' %}">GALLERY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">CONTACTS</a>
+          </li>
+          <li class="nav-item">
+            <form method=POST action="{% url 'search' %}">
+              {% csrf_token %}
+
+              <input type="search" required placeholder="Search Projects" name="q" />
+              <i class="fa fa-search"></i>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+<br>
+
+<div class="project-page padding" id="scrollspyHeading1">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        {% for project in projects %}
+        <div class="card mb-3">
+          <div class="row center g-0">
+
+            <div class="col-md-4">
+              <img src="{{project.client.logo.url}}" class="img-fluid rounded-start" alt="...">
+            </div>
+
+            <div class="col-md-8">
+              <div class="card-body">
+                <h2>
+                  {{project.title}}
+                </h2>
+                <hr />
+                <br />
+                <p>
+                  {{project.description}}
+                </p>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <p class="card-text">
+                      <small>Client: {{project.client}}</small>
+                    </p>
+                    <p class="card-text">
+                      <small>Status: {{project.status}}</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav data-pagination>
+  <ul class="pagination">
+    {% for i in nums %}
+    <li><a class="page-link" href="?page={{forloop.counter}}">{{forloop.counter}}</a></li>
+    {% endfor %}
+  </ul>
+</nav>
+
+<!----Testimonies ------------------------------------------------------------------------------------------------------------------------------------------------------>
+<div class="testimony-heading padding">
+  <div class="container-md">
+    <h1>Testimonials</h1>
+  </div>
+</div>
+
+<div class="testimonials">
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      {% for testimony in testimonies %}
+      <div class="carousel-item active text-center">
+        <img src="{{testimony.client.logo.url}}" class="center-block" alt="..." />
+        <br /><br />
+        <h4>{{testimony.name}}</h4>
+        <span>{{testimony.client}}</span>
+        <br /><br />
+        <p class="lead">
+          {{testimony.testimonial}}
+        </p>
+      </div>
+      {% endfor %}
+
+      {% for testimony in testimoniess %}
+      <div class="carousel-item text-center">
+        <img src="{{testimony.client.logo.url}}" class="center-block" alt="..." />
+        <br /><br />
+        <h4>{{testimony.name}}</h4>
+        <span>{{testimony.client}}</span>
+        <br /><br />
+        <p class="lead">
+          {{testimony.testimonial}}
+        </p>
+      </div>
+      {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+<!----End of Testimonies ------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+{% endblock content %}

@@ -1,0 +1,564 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<div class="navigation">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a href="{% url 'index' %}">
+        <img src="{% static 'images/logo2.png'  %}" alt="" width="300" height="55" class="d-inline-block" />
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav ml-auto mx-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#scrollspyHeading1">ABOUT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#scrollspyHeading2">SERVICES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#scrollspyHeading3">PROJECTS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#scrollspyHeading4">TEAM</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#scrollspyHeading5">GALLERY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#scrollspyHeading6">CONTACTS</a>
+          </li>
+          <li class="nav-item">
+            <form method=POST action="{% url 'search' %}">
+              {% csrf_token %}
+
+              <input type="search" required placeholder="Search Projects" name="q" />
+              <i class="fa fa-search"></i>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<!----Landing Page------------------------------------------------------------------------------------------------------------------------------------------------------>
+<div class="landing-page">
+  <div id="myCarousel1" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" style="background-image: url('static/images/gallery9.webp')">
+        <div class="color-overlay"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9">
+              <h1>
+                A New Frontier In Research And Development
+                <hr />
+              </h1>
+
+              <div class="row">
+                <div class="col-md-5 pbutton">
+                  <div id="btn">
+                    <a href="#scrollspyHeading1"><span class="noselect">Explore <i
+                          class="bi bi-binoculars"></i></span></a>
+                    <div id="circle"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item" style="background-image: url('static/images/About.jpeg')">
+        <div class="color-overlay"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9">
+              <h1>
+                A New Frontier In Research And Development
+                <hr />
+              </h1>
+
+              <div class="row">
+                <div class="col-md-5 pbutton">
+                  <div id="btn">
+                    <a href="#scrollspyHeading1"><span class="noselect">Explore <i
+                          class="bi bi-binoculars"></i></span></a>
+                    <div id="circle"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item" style="background-image: url('static/images/gallery3.webp')">
+        <div class="color-overlay"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9">
+              <h1>
+                A New Frontier In Research And Development
+                <hr />
+              </h1>
+
+              <div class="row">
+                <div class="col-md-5 pbutton">
+                  <div id="btn">
+                    <a href="#scrollspyHeading1"><span class="noselect">Explore <i
+                          class="bi bi-binoculars"></i></span></a>
+                    <div id="circle"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!----End of Landing Page------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+<!-----About Section----------------------------------------------------------------------------------------------------------------------------------------------------->
+<div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+</div>
+
+<div class="about padding" id="scrollspyHeading1">
+  <div class="container-md">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="{% static 'images/About.jpeg' %}" alt="" />
+      </div>
+
+      <div class="col-md-6 text-center">
+        <h2>Smart Vision, The Leading Consultancy Firm In Somalia</h2>
+        <br />
+        <p class="lead">
+          We are driven by a passion to help our clients reach their maximum
+          potential in Somalia and the Horn of Africa. Since our inception
+          10 years ago, Smart Vision has become an industry leader in
+          Somalia and Somaliland. We have gained an enviable reputation by
+          providing top-rated M&E and research services and have expanded
+          our support to include organizational capacity building.
+        </p>
+        <div id="btn">
+          <a href="{% url 'about' %}"><span class="noselect">Read More</span></a>
+          <div id="circle"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!----End of about Section------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+<!----Services------------------------------------------------------------------------------------------------------------------------------------------------------>
+<div class="services padding" id="scrollspyHeading2">
+  <div class="container-md">
+    <h1>Our Services</h1>
+    <br />
+    <p class="lead">
+      We provide specialized support services and expertise aimed at adding
+      value and filling gaps in existing capacity. Our main areas of
+      expertise are stated below
+    </p>
+    <br />
+
+    <div class="row">
+      {% for service in services %}
+      <div class="col-md-3">
+        <a href="{% url 'service' service.id %}">
+          <i class="{{service.icon}}"></i>
+          <p>{{service.name}}</p>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<!----End of Services sect------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+<!----Projects------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+<div class="projects padding" id="scrollspyHeading3">
+  <div class="container-md">
+    <h1>Projects</h1>
+    <br />
+    <p class="lead">
+      We provide specialized support services and expertise aimed at adding
+      value and filling gaps in existing capacity. Our main areas of
+      expertise are stated below
+    </p>
+    <br />
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        {% for project in projects %}
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-5">
+              <img src="{% static 'images/gallery8.webp' %}" class="img-fluid rounded-start" alt="..." />
+            </div>
+
+            <div class="col-md-7">
+              <div class="card-body">
+                <h2>
+                  {{project.title}}
+                </h2>
+                <hr />
+                <br />
+                <p>
+                  {{project.description}}
+                </p>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <p class="card-text">
+                      <small>Client: {{project.client}}</small>
+                    </p>
+                    <p class="card-text">
+                      <small>Status: {{project.status}}</small>
+                    </p>
+                  </div>
+
+                  <div class="col-md-3 pbutton">
+                    <div id="btn">
+                      <a href="{% url 'project' project.id %}"><span class="noselect">Read More</span></a>
+                      <div id="circle"></div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-3 pbutton">
+                    <div id="btn">
+                      <a href="{% url 'projects' %}"><span class="noselect">All Projects</span></a>
+                      <div id="circle"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+      aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+
+  <div class="carousel-inner">
+    {% for project in projectss %}
+    <div class="carousel-item active" style="background-image: url('static/images/land.jpg')">
+      <div class="color-overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <h1>
+              {{project.title}}
+              <hr />
+            </h1>
+            <div class="row">
+              <div class="col-md-6">
+                <p class="card-text">Client: {{project.client}}</p>
+                <br />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-3 pbutton">
+                <div id="btn">
+                  <a href="{% url 'project' project.id %}"><span class="noselect">Read More</span></a>
+                  <div id="circle"></div>
+                </div>
+              </div>
+              <div class="col-md-3 pbutton">
+                <div id="btn">
+                  <a href="{% url 'projects' %}"><span class="noselect">All Projects</span></a>
+                  <div id="circle"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+    {% for project in projectsss %}
+    <div class="carousel-item" style="background-image: url('static/images/landi.jpg')">
+      <div class="color-overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <h1>
+              {{project.title}}
+              <hr />
+            </h1>
+            <div class="row">
+              <div class="col-md-6">
+                <p class="card-text">Client: {{project.client}}</p>
+                <br />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3 pbutton">
+                <div id="btn">
+                  <a href="{% url 'project' project.id %}"><span class="noselect">Read More</span></a>
+                  <div id="circle"></div>
+                </div>
+              </div>
+              <div class="col-md-3 pbutton">
+                <div id="btn">
+                  <a href="{% url 'projects' %}"><span class="noselect">All Projects</span></a>
+                  <div id="circle"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+<!----End of Projects sect------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+<!----Why choose us------------------------------------------------------------------------------------------------------------------------------------------------------>
+<div class="counter">
+  <div class="container-md">
+    <h1>Why Choose Us</h1>
+  </div>
+</div>
+
+<div id="projectFacts" class="sectionClass">
+  <div class="fullWidth eight columns">
+    <div class="projectFactsWrap">
+      <div class="item">
+        <i class="bi bi-star"></i>
+        <p class="number">256k</p>
+        <span></span>
+        <p>Household Surveys</p>
+      </div>
+      <div class="item">
+        <i class="bi bi-briefcase"></i>
+        <p class="number">172+</p>
+        <span></span>
+        <p>Projects Completed</p>
+      </div>
+      <div class="item">
+        <i class="bi bi-emoji-laughing"></i>
+        <p class="number">70+</p>
+        <span></span>
+        <p>Happy Clients</p>
+      </div>
+      <div class="item">
+        <i class="bi bi-mortarboard"></i>
+        <p class="number">11</p>
+        <span></span>
+        <p>Years of Experience</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!----End of why choose us------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+<!---- Team ------------------------------------------------------------------------------------------------------------------------------------------------------>
+<div class="team padding" id="scrollspyHeading4">
+  <div class="container-md">
+    <h1>Our Team</h1>
+    <br />
+    <p class="lead">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut placeat
+      et nobis veritatis cupiditate, magnam, minima eum at debitis est,
+      dolores fuga? Voluptatem quasi minima fugit illum voluptatibus
+      molestias assumenda.
+    </p>
+  </div>
+</div>
+
+<div class="member container-md">
+  <div class="row justify-content-center">
+    {% for member in members %}
+    <div class="col-md-4">
+      <div class="card">
+        <img src="{{member.photo.url}}" class="card-img-top" alt="" />
+        <div class="card-body">
+          <h5>{{member.name}}</h5>
+          <p>{{member.title}}</p>
+
+          <div id="btn">
+            <a href="{% url 'profile' member.id %}"><span class="noselect">Read More</span></a>
+            <div id="circle"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<br /><br />
+
+<div class="button1 container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-md-3">
+      <div id="btn">
+        <a href="{% url 'team' %}"><span class="noselect">Meet Everyone</span></a>
+        <div id="circle"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!----End of Team ------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+<!----Clients------------------------------------------------------------------------------------------------------------------------------------------------------>
+<div class="client-heading padding">
+  <div class="container-md">
+    <h1>Our Clients</h1>
+    <br />
+    <p>
+      We work with the most reputable organizations in the world. Some of
+      our clients and partners include:
+    </p>
+  </div>
+</div>
+
+<div class="clients container-fluid">
+  <div class="row">
+    <div class="container">
+      <section class="logo-carousel slider" data-arrows="true">
+        {% for client in clients %}
+        <div class="slide"><img src="{{client.logo.url}}" /></div>
+        {% endfor %}
+      </section>
+    </div>
+  </div>
+</div>
+<!----End of Clients------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+<!----Gallery ------------------------------------------------------------------------------------------------------------------------------------------------------>
+<div class="gallery-heading padding" id="scrollspyHeading5">
+  <div class="container-md">
+    <h1>Gallery</h1>
+  </div>
+</div>
+
+<div class="gallery container-fluid">
+  <div class="row">
+    <div class="image">
+      <img src="{% static 'images/gallery1.jpg' %}" alt="" />
+    </div>
+    <div class="image">
+      <img src="{% static 'images/gallery2.webp' %}" alt="" />
+    </div>
+    <div class="image">
+      <img src="{% static 'images/gallery3.webp'  %}" alt="" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="image">
+      <img src="{% static 'images/gallery4.webp' %}" alt="" />
+    </div>
+    <div class="image">
+      <img src="{% static 'images/gallery5.webp' %}" alt="" />
+    </div>
+    <div class="image">
+      <img src="{% static 'images/gallery6.webp' %}" alt="" />
+    </div>
+  </div>
+</div>
+
+<br />
+
+<div class="button2 container">
+  <div class="row justify-content-center">
+    <div class="col-md-2">
+      <div id="btn">
+        <a href="{% url 'gallery' %}"><span class="noselect">View All</span></a>
+        <div id="circle"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!----End of Gallery ------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+<!----Testimonies ------------------------------------------------------------------------------------------------------------------------------------------------------>
+<div class="testimony-heading padding">
+  <div class="container-md">
+    <h1>Testimonials</h1>
+  </div>
+</div>
+
+<div class="testimonials">
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      {% for testimony in testimonies %}
+      <div class="carousel-item active text-center">
+        <img src="{{testimony.client.logo.url}}" class="center-block" alt="..." />
+        <br /><br />
+        <h4>{{testimony.name}}</h4>
+        <span>{{testimony.client}}</span>
+        <br /><br />
+        <p class="lead">
+          {{testimony.testimonial}}
+        </p>
+      </div>
+      {% endfor %}
+
+      {% for testimony in testimoniess %}
+      <div class="carousel-item text-center">
+        <img src="{{testimony.client.logo.url}}" class="center-block" alt="..." />
+        <br /><br />
+        <h4>{{testimony.name}}</h4>
+        <span>{{testimony.client}}</span>
+        <br /><br />
+        <p class="lead">
+          {{testimony.testimonial}}
+        </p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+<!----End of Testimonies ------------------------------------------------------------------------------------------------------------------------------------------------------>
+{% endblock content %}

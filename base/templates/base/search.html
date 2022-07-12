@@ -1,0 +1,105 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<div class="navigation">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a href="{% url 'index' %}">
+                <img src="{% static 'images/logo2.png'%}" alt="" width="300" height="55" class="d-inline-block" />
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav ml-auto mx-3">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'index' %}">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'services' %}">SERVICES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'projects' %}">PROJECTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'team' %}">TEAM</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'gallery' %}">GALLERY</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">CONTACTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <form method=POST action="{% url 'search' %}">
+                            {% csrf_token %}
+
+                            <input type="search" required placeholder="Search Projects" name="q" />
+                            <i class="fa fa-search"></i>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+{% if q %}
+<div class="project-page padding">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                {% for project in projects %}
+                <div class="card mb-3">
+                    <div class="row center g-0">
+
+                        <div class="col-md-4">
+                            <img src="{{project.client.logo.url}}" class="img-fluid rounded-start" alt="...">
+                        </div>
+
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h2>
+                                    {{project.title}}
+                                </h2>
+                                <hr />
+                                <br />
+                                <p>
+                                    {{project.description}}
+                                </p>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p class="card-text">
+                                            <small>Client: {{project.client}}</small>
+                                        </p>
+                                        <p class="card-text">
+                                            <small>Status: {{project.status}}</small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% else %}
+<div class=" error padding">
+    <br><br>
+    <h1>Search not found</h1>
+    <br><br>
+</div>
+{% endif %}
+{% endblock content %}

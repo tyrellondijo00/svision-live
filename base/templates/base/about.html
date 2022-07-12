@@ -1,0 +1,488 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<div class="navigation">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a href="{% url 'index' %}">
+        <img src="{% static 'images/logo2.png'%}" alt="" width="300" height="55" class="d-inline-block" />
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav ml-auto mx-3">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{% url 'index' %}">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">ABOUT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'services' %}">SERVICES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'projects' %}">PROJECTS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'team' %}">TEAM</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'gallery' %}">GALLERY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">CONTACTS</a>
+          </li>
+          <li class="nav-item">
+            <form method=POST action="{% url 'search' %}">
+              {% csrf_token %}
+
+              <input type="search" required placeholder="Search Projects" name="q" />
+              <i class="fa fa-search"></i>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<br><br><br>
+<div class="about-history padding">
+  <div class="container-md">
+    <div class="about-history-content container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="single-about-history2">
+            <div class="about-history-txt" id="scrollspyHeading2">
+              <h1>Our Background</h1>
+              <br><br>
+              <p class="lead">
+                Smart Vision was established in response to an overwhelming need among humanitarian and development
+                organizations for efficient and accurate monitoring, evaluation, and research services. We are driven by
+                a passion to help our clients reach their maximum potential in Somalia and the Horn of Africa.
+
+                Since our inception 10 years ago, Smart Vision has become an industry leader in Somalia and Somaliland.
+                We have gained an enviable reputation by providing top-rated M&E and research services and have expanded
+                our support to include organizational capacity building.
+
+                We are proud to have a track record of meeting and exceeding our clients’ expectations, and have
+                received positive recommendations from both governmental and non-governmental organizations. We are a
+                registered company in Somalia, Somaliland, Puntland and Jubbaland.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="about-history-img">
+            <img src="{% static 'images/gallery5.webp' %}" alt="about" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="about-page-heading padding" id="scrollspyHeading1">
+  <div class="container-md">
+    <h1>Our History</h1>
+    <br />
+    <p lead>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. A id
+      consequatur eaque ea odit necessitatibus, rerum distinctio nihil
+      deleniti ut veritatis officia repellendus cumque alias sequi culpa
+      dolor animi nulla.
+    </p>
+  </div>
+</div>
+
+<div class="about-history">
+  <div class="container-md">
+    <div class="about-history-content container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="about-history-img">
+            <img src="{% static 'images/gallery3.webp' %}" alt="about" />
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="single-about-history">
+            <div class="about-history-txt">
+              <div class="main-timeline">
+                <div class="row">
+                  <div class="col-md-2 col-sm-2">
+                    <div class="experience-time">
+                      <h3>2002</h3>
+                    </div>
+                    <!--/.experience-time-->
+                  </div>
+                  <!--/.col-->
+                  <div class="col-md-10 col-sm-10">
+                    <div class="timeline">
+                      <div class="timeline-content">
+                        <h4 class="title">
+                          <span><i class="fa fa-circle-o" aria-hidden="true"></i></span>
+                        </h4>
+
+                        <ul class="description">
+                          <li>
+                            Duis aute irure dolor in reprehenderit in the
+                            voluptate velit esse cillum dolore eu ugiat
+                            nulla pariatur cupiat non proident.
+                          </li>
+                        </ul>
+                      </div>
+                      <!--/.timeline-content-->
+                    </div>
+                    <!--/.timeline-->
+                  </div>
+                  <!--/.col-->
+                </div>
+
+                <div class="row">
+                  <div class="col-md-2 col-sm-2">
+                    <div class="experience-time">
+                      <h3>2007</h3>
+                    </div>
+                    <!--/.experience-time-->
+                  </div>
+                  <!--/.col-->
+                  <div class="col-md-10 col-sm-10">
+                    <div class="timeline">
+                      <div class="timeline-content">
+                        <h4 class="title">
+                          <span><i class="fa fa-circle-o" aria-hidden="true"></i></span>
+                        </h4>
+
+                        <ul class="description">
+                          <li>
+                            Duis aute irure dolor in reprehenderit in the
+                            voluptate velit esse cillum dolore eu ugiat
+                            nulla pariatur cupiat non proident.
+                          </li>
+                        </ul>
+                      </div>
+                      <!--/.timeline-content-->
+                    </div>
+                    <!--/.timeline-->
+                  </div>
+                  <!--/.col-->
+                </div>
+
+                <div class="row">
+                  <div class="col-md-2 col-sm-2">
+                    <div class="experience-time">
+                      <h3>2012</h3>
+                    </div>
+                    <!--/.experience-time-->
+                  </div>
+                  <!--/.col-->
+                  <div class="col-md-10 col-sm-10">
+                    <div class="timeline">
+                      <div class="timeline-content">
+                        <h4 class="title">
+                          <span><i class="fa fa-circle-o" aria-hidden="true"></i></span>
+                        </h4>
+
+                        <ul class="description">
+                          <li>
+                            Duis aute irure dolor in reprehenderit in the
+                            voluptate velit esse cillum dolore eu ugiat
+                            nulla pariatur cupiat non proident.
+                          </li>
+                        </ul>
+                      </div>
+                      <!--/.timeline-content-->
+                    </div>
+                    <!--/.timeline-->
+                  </div>
+                  <!--/.col-->
+                </div>
+
+                <div class="row">
+                  <div class="col-md-2 col-sm-2">
+                    <div class="experience-time">
+                      <h3>2016</h3>
+                    </div>
+                    <!--/.experience-time-->
+                  </div>
+                  <!--/.col-->
+                  <div class="col-md-10 col-sm-10">
+                    <div class="timeline">
+                      <div class="timeline-content">
+                        <h4 class="title">
+                          <span><i class="fa fa-circle-o" aria-hidden="true"></i></span>
+                        </h4>
+
+                        <ul class="description">
+                          <li>
+                            Duis aute irure dolor in reprehenderit in the
+                            voluptate velit esse cillum dolore eu ugiat
+                            nulla pariatur cupiat non proident.
+                          </li>
+                        </ul>
+                      </div>
+                      <!--/.timeline-content-->
+                    </div>
+                    <!--/.timeline-->
+                  </div>
+                  <!--/.col-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br /><br />
+
+    <div class="about-history-content2 container">
+      <div class="row row2">
+        <div class="col-md-6">
+          <div class="single-about-history2">
+            <div class="about-history-txt" id="scrollspyHeading2">
+              <h1>Vision</h1>
+              <p class="lead">
+                To support our clients on their journey to achieve maximum
+                potential for their projects and the people they serve.
+              </p>
+            </div>
+            <br />
+            <div class="about-history-txt">
+              <h1>Mission</h1>
+              <p class="lead">
+                We offer a comprehensive suite of data-driven services to
+                improve our clients programming and operational outcomes.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="single-about-history">
+            <div class="about-history-img">
+              <img src="{% static 'images/gallery7.webp' %}" alt="about" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!----Why choose us------------------------------------------------------------------------------------------------------------------------------------------------------>
+<div class="counter">
+  <div class="container-md">
+    <h1>Why Choose Us</h1>
+  </div>
+</div>
+
+<div id="projectFacts" class="sectionClass">
+  <div class="fullWidth eight columns">
+    <div class="projectFactsWrap">
+      <div class="item">
+        <i class="bi bi-star"></i>
+        <p class="number">256k</p>
+        <span></span>
+        <p>Household Surveys</p>
+      </div>
+      <div class="item">
+        <i class="bi bi-briefcase"></i>
+        <p class="number">172+</p>
+        <span></span>
+        <p>Projects Completed</p>
+      </div>
+      <div class="item">
+        <i class="bi bi-emoji-laughing"></i>
+        <p class="number">70+</p>
+        <span></span>
+        <p>Happy Clients</p>
+      </div>
+      <div class="item">
+        <i class="bi bi-mortarboard"></i>
+        <p class="number">11</p>
+        <span></span>
+        <p>Years of Experience</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!----End of why choose us------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+<!---- Team ------------------------------------------------------------------------------------------------------------------------------------------------------>
+<div class="team padding">
+  <div class="container-md">
+    <h1>Our Team</h1>
+    <br />
+    <p class="lead">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut placeat
+      et nobis veritatis cupiditate, magnam, minima eum at debitis est,
+      dolores fuga? Voluptatem quasi minima fugit illum voluptatibus
+      molestias assumenda.
+    </p>
+  </div>
+</div>
+
+<div class="member container-md">
+  <div class="row justify-content-center">
+    {% for member in members %}
+    <div class="col-md-4">
+      <div class="card">
+        <img src="{{member.photo.url}}" class="card-img-top" alt="" />
+        <div class="card-body">
+          <h5>{{member.name}}</h5>
+          <p>{{member.title}}</p>
+
+          <div id="btn">
+            <a href="{% url 'profile' member.id %}"><span class="noselect">Read More</span></a>
+            <div id="circle"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<br /><br />
+
+<div class="button1 container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-md-3">
+      <div id="btn">
+        <a href="{% url 'team' %}"><span class="noselect">Meet Everyone</span></a>
+        <div id="circle"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!----End of Team ------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+<!----Clients------------------------------------------------------------------------------------------------------------------------------------------------------>
+<div class="client-heading padding">
+  <div class="container-md">
+    <h1>Our Clients</h1>
+    <br />
+    <p>
+      We work with the most reputable organizations in the world. Some of
+      our clients and partners include:
+    </p>
+  </div>
+</div>
+
+<div class="clients container-fluid">
+  <div class="row">
+    <div class="container">
+      <section class="logo-carousel slider" data-arrows="true">
+        {% for client in clients %}
+        <div class="slide"><img src="{{client.logo.url}}" /></div>
+        {% endfor %}
+      </section>
+    </div>
+  </div>
+</div>
+<!----End of Clients------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+<!----Gallery ------------------------------------------------------------------------------------------------------------------------------------------------------>
+<div class="gallery-heading padding">
+  <div class="container-md">
+    <h1>Gallery</h1>
+  </div>
+</div>
+
+<div class="gallery container-fluid">
+  <div class="row">
+    <div class="image">
+      <img src="{% static 'images/gallery1.jpg' %}" alt="" />
+    </div>
+    <div class="image">
+      <img src="{% static 'images/gallery2.webp' %}" alt="" />
+    </div>
+    <div class="image">
+      <img src="{% static 'images/gallery3.webp' %}" alt="" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="image">
+      <img src="{% static 'images/gallery4.webp' %}" alt="" />
+    </div>
+    <div class="image">
+      <img src="{% static 'images/gallery5.webp' %}" alt="" />
+    </div>
+    <div class="image">
+      <img src="{% static 'images/gallery6.webp' %}" alt="" />
+    </div>
+  </div>
+</div>
+
+<br />
+
+<div class="button2 container">
+  <div class="row justify-content-center">
+    <div class="col-md-2">
+      <div id="btn">
+        <a href="{% url 'gallery' %}"><span class="noselect">View All</span></a>
+        <div id="circle"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!----End of Gallery ------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+<!----Testimonies ------------------------------------------------------------------------------------------------------------------------------------------------------>
+<div class="testimony-heading padding">
+  <div class="container-md">
+    <h1>Testimonials</h1>
+  </div>
+</div>
+
+<div class="testimonials">
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      {% for testimony in testimonies %}
+      <div class="carousel-item active text-center">
+        <img src="{{testimony.client.logo.url}}" class="center-block" alt="..." />
+        <br /><br />
+        <h4>{{testimony.name}}</h4>
+        <span>{{testimony.client}}</span>
+        <br /><br />
+        <p class="lead">
+          {{testimony.testimonial}}
+        </p>
+      </div>
+      {% endfor %}
+
+      {% for testimony in testimoniess %}
+      <div class="carousel-item text-center">
+        <img src="{{testimony.client.logo.url}}" class="center-block" alt="..." />
+        <br /><br />
+        <h4>{{testimony.name}}</h4>
+        <span>{{testimony.client}}</span>
+        <br /><br />
+        <p class="lead">
+          {{testimony.testimonial}}
+        </p>
+      </div>
+      {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+<!----End of Testimonies ------------------------------------------------------------------------------------------------------------------------------------------------------>
+{% endblock content %}
