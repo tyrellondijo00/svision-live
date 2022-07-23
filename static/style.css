@@ -166,6 +166,13 @@ html, body{
     padding: 80px 0;
 }
 
+@media only screen and (max-width: 500px) {
+  .padding {
+    padding: 60px 0;
+ }
+  
+}
+
 .padding img {
     width: 100%;
 }
@@ -687,6 +694,9 @@ html, body{
 }
 
 @media (max-width: 991px){
+  .testimonials{
+    margin-bottom: 20px;
+  }
   .testimonials p{
     margin-left: 5%;
     margin-right: 5%;
@@ -739,7 +749,23 @@ html, body{
   display: flex;
 }
 
-.container .contactInfo .box .icon{
+.socials{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+}
+
+.socials .box {
+  margin-right: 20px;
+}
+
+.socials a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.container .contactInfo .box .icon, .socials .icon{
   min-width: 60px;
   height: 60px;
   background: #fff;
@@ -815,6 +841,8 @@ html, body{
   font-size: 18px;
   font-family: 'Roboto', sans-serif; 
 }
+
+
 
 @media (max-width: 991px){
   .contact{

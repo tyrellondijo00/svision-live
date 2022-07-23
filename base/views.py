@@ -14,12 +14,9 @@ def indexPage(request):
     services = Service.objects.all()
     testimonies = Testimony.objects.all()[0:1]
     testimoniess = Testimony.objects.all()[1:]
-    projects = Project.objects.all()[0:1]
-    projectss = Project.objects.all()[1:2]
-    projectsss = Project.objects.all()[2:4]
-    
+    projects = Project.objects.all()[62:]  
 
-    context = {'members': members, 'testimonies': testimonies, 'testimoniess': testimoniess, 'clients': clients, 'services': services, 'projects': projects, 'projectss': projectss, 'projectsss': projectsss }
+    context = {'members': members, 'testimonies': testimonies, 'testimoniess': testimoniess, 'clients': clients, 'services': services, 'projects': projects}
     return render(request, 'base/index.html', context,)
 
 def aboutPage(request):
@@ -65,7 +62,7 @@ def profilePage(request, pk):
 
 def projectsPage(request):
 
-    project_list = Project.objects.all().order_by('id')
+    project_list = Project.objects.all().order_by('-id')
     p = Paginator(project_list, 10)
     page = request.GET.get('page')
 
