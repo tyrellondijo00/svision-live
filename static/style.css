@@ -250,7 +250,7 @@ html, body{
 /* about */
 
 /* Services */
-.services .container-md, .projects .container-md, .counter .container-md, .team .container-md, .gallery-heading .container-md, .client-heading .container-md, .contact .container-md, .testimony-heading .container-md, .about-page-heading .container-md, .single-about-history2, .profile, .single-project, .single-service{
+.services .container-md h1, .projects .container-md h1, .counter .container-md h1, .team .container-md h1, .gallery-heading .container-md h1, .client-heading .container-md h1, .contact .container-md h1, .testimony-heading .container-md h1, .about-page-heading .container-md h1, .single-about-history2 h1, .profile h1, .profile h4, .profile .prof-pic , .single-project h1, .single-service h1{
     text-align: center;
 }
 
@@ -287,9 +287,9 @@ html, body{
   /* background-color: darkgray; */
 }
 
-.projects .container-fluid, .project-page .container-fluid {
+/* .projects .container-fluid, .project-page .container-fluid {
   text-align: center;
-}
+} */
 
 .projects .container-fluid img{
   height: 100%;
@@ -901,9 +901,9 @@ html, body{
 /* ABOUT PAGE */
 /* ---------------------------------------------------------------------------------------------------------------------- */
 
-.about-history .about-history-txt p, .about-history .about-history-txt h2{
+/* .about-history .about-history-txt p, .about-history .about-history-txt h2{
   text-align: center;
-}
+} */
 
 .about-history-img{
   height: 100%;

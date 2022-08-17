@@ -24,7 +24,7 @@
             <a class="nav-link" href="{% url 'about' %}">ABOUT</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/services.html">SERVICES</a>
+            <a class="nav-link" href="{% url 'services' %}">SERVICES</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'projects' %}">PROJECTS</a>
@@ -61,7 +61,7 @@
       <img src="{{profile.photo.url}}" alt="" />
     </div>
 
-    <p class="lead">
+    <p>
       {{profile.bio}}
     </p>
   </div>
