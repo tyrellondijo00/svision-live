@@ -170,6 +170,10 @@ html, body{
   .padding {
     padding: 60px 0;
  }
+
+ h2 {
+  margin-top: 20px;
+ }
   
 }
 
@@ -906,7 +910,11 @@ html, body{
   width: 100%;
 }
 
-.about-history .about-history-content, .about-history .about-history-content2 {
+.about-history .about-history-content{
+  position: static;
+}
+
+.about-history .about-history-content2 {
   position: relative;
 }
 
@@ -917,8 +925,9 @@ html, body{
 .about-history .about-history-content img, .about-history .about-history-content2 img{
   position: relative;
   height: 90%;
-  width: 100%;
+  width: 95%;
   vertical-align: middle;
+  margin-top: 35px;
 }
 
 
