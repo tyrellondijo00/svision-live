@@ -16,8 +16,9 @@ html, body{
 
 .navbar{
     padding: .9rem;
-    background-color: darkgray;
+    background-color: #002347;
     font-size: 1.1em;
+    color: whitesmoke;
         
 }
 
@@ -35,10 +36,10 @@ html, body{
     transition: all 1s;
     width: 50px;
     height: 25px;
-    background:  darkgray;
+    background:  #002347;
     box-sizing: border-box;
     border-radius: 25px;
-    border: 4px darkgray;
+    border: 4px #002347;
     padding: 5px;
 }
 
@@ -66,7 +67,7 @@ html, body{
     top: 0;
     right: 0;
     border-radius: 50%;
-    color: #07051a;
+    color: whitesmoke;
     text-align: center;
     font-size: 1em;
     transition: all 1s;
@@ -85,13 +86,13 @@ html, body{
 
 .navigation form:hover .fa,
 .navigation form:valid .fa{
-    background: darkgray;
+    background: #FF5003;
     color: black;
 }
 
 .navigation a{
   text-decoration: none;
-  color: black;
+  color: whitesmoke;
 }
 
 .navigation form a {
@@ -183,14 +184,20 @@ html, body{
 
 .about h2, .services h1, .project-carousel h3, .projects h1, .counter h1, .team h1, .gallery-heading h1, .client-heading h1, .contact h1, .testimony-heading h1, .about-page-heading h1, .about-history-txt h1, .profile h1, .single-project h3, .single-service h3 {
     font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    color: blue;
+}
+
+.projects h1, .contact h1{
+  color: #FF5003;
 }
 
 .about p, .services p, .project-carousel, .projects p, .team p, .member p, .client-heading p, .contact-heading p, .contact p, .testimony-heading p, .about-history-txt p, .about-page-heading p, .profile p, .single-project p, .single-service p {
     font-family: 'Roboto', sans-serif; 
     font-size: 1.15em;
 }
-.about #btn, .member #btn, .button1 #btn, .button2 #btn {
-    background:  darkgray;
+.member #btn, .button1 #btn, .button2 #btn {
+    background:  #FF5003;
     height: 50px;
     min-width: 10px;
     border: none;
@@ -208,6 +215,30 @@ html, body{
     padding-top: 5px;
   }
 
+  .button2 #btn{
+    background: #002347;
+  }
+
+  .about #btn{
+    background: #002347;
+    height: 50px;
+    min-width: 10px;
+    border: none;
+    border-radius: 10px;
+    color: black;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif; 
+    position: relative;
+    transition: 1s;
+    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding-top: 5px;
+    
+  }
+
   .about .noselect, .projects .noselect, #myCarousel .noselect, #myCarousel1 .noselect, .member .noselect,.button1 .noselect, .button2 .noselect  {
     -webkit-touch-callout: none;
       -webkit-user-select: none;
@@ -222,6 +253,10 @@ html, body{
     color: black;
     position: absolute;
     }
+
+    .about a, .member a, .button2 a{
+      color: whitesmoke;
+    }
   
  .about #btn #circle, .projects #btn #circle, #myCarousel #btn #circle, #myCarousel1 #btn #circle, .member #btn #circle,.button1 #btn #circle, .button2 #btn #circle{
     width: 5px;
@@ -235,8 +270,13 @@ html, body{
   }
   
   
-  .about #btn:hover, .projects #btn:hover, #myCarousel #btn:hover, #myCarousel1 #btn:hover, .member #btn:hover,.button1 #btn:hover, .button2 #btn:hover{
+   .projects #btn:hover, #myCarousel #btn:hover, #myCarousel1 #btn:hover, .member #btn:hover,.button1 #btn:hover, .button2 #btn:hover{
     color: white;
+    background: transparent;
+  }
+
+  .about #btn:hover{
+    color: black;
     background: transparent;
   }
   
@@ -246,6 +286,11 @@ html, body{
     left: 0;
     border-radius: 0;
     border-bottom: 2px solid black;
+  }
+
+  .about #btn:hover a, .button2 #btn:hover a{
+    color: black;
+    background: transparent;
   }
 /* about */
 
@@ -262,8 +307,13 @@ html, body{
   color: black;
 }
 
+.services .container-md .row{
+  text-align: center;
+}
+
 .services .bi{
     font-size: 40px;
+    color: blue;
 }
 
 .services p {
@@ -271,7 +321,7 @@ html, body{
 }
 
 .services a{
-    color: #696969;
+    color: black;
     text-decoration: none;
 }
 
@@ -284,7 +334,8 @@ html, body{
   padding-bottom: 30px;
   padding-left: 0;
   padding-right: 0;
-  /* background-color: darkgray; */
+  background-color: #002347;
+  color: whitesmoke;
 }
 
 /* .projects .container-fluid, .project-page .container-fluid {
@@ -299,23 +350,23 @@ html, body{
   margin-top: 20px;
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.6em;
-  color: black;
+  color: whitesmoke;
 }
 
 .projects p, .project-page p{
   font-family: 'Roboto', sans-serif; 
   font-size: 1.11em;
-  color: black;
+  color: whitesmoke;
 }
 
 .projects a, .project-page a {
   text-decoration: none;
-  color: black;
+  color: whitesmoke;
   position: absolute;
 }
 
 .projects #btn{
-  background: darkgray;
+  background: #FF5003;
   height: 50px;
   min-width: 10px;
   border: none;
@@ -333,16 +384,34 @@ html, body{
   padding-top: 5px;
 }
 
-.projects .container-fluid .row .col-12 .card, .project-page .container-fluid .row .col-12 .card{
-  background: white;
+.projects #btn:hover #circle, .member #btn:hover #circle{
+  border-bottom: 2px solid whitesmoke;
 }
+
+.projects .container-fluid .row .col-12 .card{
+  background: #002347;
+  color: whitesmoke;
+}
+
+.project-page .container-fluid .row .col-12 .card{
+  color: black;
+}
+
+.project-page{
+  background-color: white;
+}
+
 
 .projects .container-fluid .row .col-12 .card .row .col-md-7 .card-body .card-text, .project-page .container-fluid .row .col-12 .card .row .col-md-8 .card-body .card-text{
   font-size: 1.1em;
   display: block;
   text-align: start;
-  color: black;
+  color: whitesmoke;
   margin-bottom: 5px;
+}
+
+.project-page h2, .project-page p, .project-page a, .project-page, .project-page .container-fluid .row .col-12 .card .row .col-md-8 .card-body .card-text{
+  color: black;
 }
 
 @media (max-width: 991px){
@@ -388,12 +457,12 @@ html, body{
 }
 
 #myCarousel #btn, #myCarousel1 #btn{
-  background: darkgray;
+  background: #FF5003;
   height: 50px;
   min-width: 10px;
   border: none;
   border-radius: 10px;
-  color: white;
+  color: red;
   font-size: 20px;
   font-family: 'Roboto', sans-serif; 
   position: relative;
@@ -457,19 +526,19 @@ html, body{
 }
 
 .projectFactsWrap .item:nth-child(1){
-  background: darkgrey;
+  background: #003366;
 }
 
 .projectFactsWrap .item:nth-child(2){
-  background: #7D7D7D;
+  background: #FD7702;
 }
 
 .projectFactsWrap .item:nth-child(3){
-  background: #9E9E9E;
+  background: #003F7D;
 }
 
 .projectFactsWrap .item:nth-child(4){
-  background: #696969;
+  background: #FF8E00;
 }
 
 .projectFactsWrap .item p.number{
@@ -522,6 +591,8 @@ html, body{
 /* team */
 .member .row .col-md-4 .card{
   margin-bottom: 10px;
+  background: #002347;
+  color: whitesmoke;
 }
 .member .row .col-md-4 .card .card-body{
   text-align: center;
@@ -558,7 +629,6 @@ html, body{
 
 .slick-slide img {
   width: 100%;
-  filter: grayscale(100%);
 }
 
 .slick-track::before,
@@ -670,6 +740,10 @@ html, body{
 .testimonials .carousel{
   height: 25rem;
 }
+
+.testimonials .carousel p{
+  text-align: left;
+}
 .testimonials .carousel-inner img{
   width: 150px;
   height: 150px;
@@ -720,7 +794,7 @@ html, body{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: darkgray;
+  background: #002347;
 }
 
 .contact .content{
@@ -731,6 +805,7 @@ html, body{
 
 .contact h2{
   font-family: 'Roboto', sans-serif;  
+  color: #002347;
 }
 
 .contact .container{
@@ -766,25 +841,26 @@ html, body{
 
 .socials a{
   text-decoration: none;
-  color: inherit;
+  color: whitesmoke;
 }
 
 .container .contactInfo .box .icon, .socials .icon{
   min-width: 60px;
   height: 60px;
-  background: #fff;
+  background: #FF5003;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   font-size: 22px;
+  color: whitesmoke;
 }
 
 .container .contactInfo .box .text{
   display: flex;
   margin-left: 20px;
   font-size: 16px;
-  color: black;
+  color: whitesmoke;
   flex-direction: column;
   font-family: 'Roboto', sans-serif; 
 }
@@ -826,7 +902,7 @@ html, body{
   margin: 10px 0;
   pointer-events: none;
   transition: 0.5s;
-  color: #696969;
+  color: #002347;
 }
 
 .contactForm .inputBox input:focus ~ span,.contactForm .inputBox input:valid ~ span, .contactForm .inputBox textarea:focus ~ span, .contactForm .inputBox textarea:valid ~ span{
@@ -837,8 +913,8 @@ html, body{
 
 .contactForm .inputBox input[type="submit"]{
   width: 100px;
-  background: darkgray;
-  color: black;
+  background: #FF5003;
+  color: whitesmoke;
   border: none;
   cursor: pointer;
   padding: 10px;
@@ -879,7 +955,7 @@ html, body{
 }
 
 .button1 #btn{
-  background: #696969;
+  background: #002347;
 }
 
 .button1 a{
@@ -925,7 +1001,7 @@ html, body{
 .about-history .about-history-content img, .about-history .about-history-content2 img{
   position: relative;
   height: 90%;
-  width: 95%;
+  width: 90%;
   vertical-align: middle;
   margin-top: 35px;
 }
@@ -973,7 +1049,7 @@ html, body{
 }
 .timeline-content  span>i{
     display: inline-block;
-	color: darkgray;
+	color: #FF5003;
 	position: relative;
     top: 15px;
     left: -9px;
@@ -1042,9 +1118,11 @@ html, body{
 [data-pagination] > a {
   font-size: 100%;
 }
+
 [data-pagination] a:focus,
 [data-pagination] a:hover {
-  color: #696969;
+  color: #FF5003;
+  background: #002347;
 }
 
 [data-pagination] .current a:focus,
@@ -1059,8 +1137,9 @@ html, body{
   text-decoration: none;
 }
 
-[data-pagination] li.current {
-  background: darkgray;
+[data-pagination] .active {
+  background: #002347;
+  color: #FF5003;
 }
 /* Disabled & Hidden Styles */
 [data-pagination] .disabled,

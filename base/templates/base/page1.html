@@ -2,10 +2,10 @@
 {% load static %}
 {% block content %}
 <div class="navigation">
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
     <div class="container-fluid">
       <a href="{% url 'index' %}">
-        <img src="{% static 'images/logo2.png' %}" alt="" width="300" height="55" class="d-inline-block" />
+        <img src="{% static 'images/svlogo.png' %}" alt="" width="300" height="55" class="d-inline-block" />
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -61,7 +61,7 @@
         <div class="card mb-3">
           <div class="row center g-0">
 
-            <div class="col-md-4">
+            <div class="col-md-4 text-center">
               <img src="{{project.client.logo.url}}" class="img-fluid rounded-start" alt="...">
             </div>
 
@@ -121,7 +121,7 @@
         <h4>{{testimony.name}}</h4>
         <span>{{testimony.client}}</span>
         <br /><br />
-        <p class="lead">
+        <p>
           {{testimony.testimonial}}
         </p>
       </div>
@@ -152,4 +152,13 @@
 </div>
 <!----End of Testimonies ------------------------------------------------------------------------------------------------------------------------------------------------------>
 
+<script>
+  $(document).ready(function () {
+    $("[href]").each(function () {
+      if (this.href == window.location.href) {
+        $(this).addClass("active");
+      }
+    });
+  });
+</script>
 {% endblock content %}
